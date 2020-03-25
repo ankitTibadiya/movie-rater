@@ -14,12 +14,12 @@ import {
 
 import { AppComponent } from "./app.component";
 import { AuthModule } from "./auth/auth.module";
-import { MainModule } from "./main/main.module";
 import { HeaderComponent } from "./header/header.component";
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
+import { PostsService } from "./posts/posts.service";
 
-const routes: Routes = [{ path: "", pathMatch: "full", redirectTo: "movies" }];
+// const routes: Routes = [{ path: "", pathMatch: "full", redirectTo: "movies" }];
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ const routes: Routes = [{ path: "", pathMatch: "full", redirectTo: "movies" }];
   imports: [
     BrowserModule,
     AuthModule,
-    MainModule,
     HttpClientModule,
     FormsModule,
     MatInputModule,
@@ -39,11 +38,11 @@ const routes: Routes = [{ path: "", pathMatch: "full", redirectTo: "movies" }];
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    RouterModule.forRoot(routes),
+    // RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
-  exports: [RouterModule],
-  providers: [],
+  exports: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
