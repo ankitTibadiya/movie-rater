@@ -18,6 +18,7 @@ import { HeaderComponent } from "./header/header.component";
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
 import { PostsService } from "./posts/posts.service";
+import { AppRoutingModule } from './app-routing.module';
 
 // const routes: Routes = [{ path: "", pathMatch: "full", redirectTo: "movies" }];
 
@@ -30,6 +31,7 @@ import { PostsService } from "./posts/posts.service";
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     AuthModule,
     HttpClientModule,
     FormsModule,
@@ -38,7 +40,6 @@ import { PostsService } from "./posts/posts.service";
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    // RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
   exports: [],

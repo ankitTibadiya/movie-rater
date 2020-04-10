@@ -6,7 +6,7 @@ import { Subscription } from "rxjs";
 @Component({
   selector: "app-post-list",
   templateUrl: "./post-list.component.html",
-  styleUrls: ["./post-list.component.css"]
+  styleUrls: ["./post-list.component.css"],
 })
 export class PostListComponent implements OnInit, OnDestroy {
   constructor(public postsService: PostsService) {}
@@ -21,6 +21,11 @@ export class PostListComponent implements OnInit, OnDestroy {
       .subscribe((posts: Post[]) => {
         this.posts = posts;
       });
+  }
+
+  onDelete(postId: string) {
+    console.log(postId);
+    this.postsService.deletePost(postId);
   }
 
   ngOnDestroy() {
